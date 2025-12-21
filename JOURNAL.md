@@ -1,5 +1,5 @@
 # Journal
-### Total time spent : 13.7 hours
+### Total time spent : 16.2 hours
 All entries below are a transcription of the journal on the [blueprint program platform](https://blueprint.hackclub.com/projects/5896) because I created the github page afterwards.
 
 ## Day 1 (12/10/2025, session of 2 hours) : Preparation and schematic start
