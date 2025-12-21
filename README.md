@@ -18,20 +18,22 @@ It all started when a friend introduced me to [Hack Club](https://hackclub.com/)
 
 # Bill of materials
 
-| Designator | Footprint | Quantity | Comment |
-| :--- | :--- | ---: | :--- |
-| R2,R1 | R_0402_1005Metric | 2   | 22  |
-| D1  | LED_0603_1608Metric | 1   | LED |
-| C17,C2,C4,C12,C5,C7,C8,C3,C9,C6,C11 | C_0402_1005Metric | 11  | 0.1uF |
-| C13,C14 | C_0603_1608Metric | 2   | 10uF |
-| TP2,TP1,TP3 | TestPoint_Pad_1.5x1.5mm | 3   | TestPoint |
-| Y1  | Crystal_SMD_3225-4Pin_3.2x2.5mm | 1   | 12 MHz |
-| C10,C1 | C_0402_1005Metric | 2   | 1uF |
-| R5,R3,R6 | R_0402_1005Metric | 3   | 1K  |
-| U1  | QFN-56-1EP_7x7mm_P0.4mm_EP3.2x3.2mm | 1   | RP2040 |
-| R4  | R_0402_1005Metric | 1   | 10K |
-| J1  | USB_A_CNCTech_1001-011-01101_Horizontal | 1   | USB_A |
-| U3  | Winbond_USON-8-1EP_3x2mm_P0.5mm_EP0.2x1.6mm | 1   | W25Q16JVUXIQ TR |
-| C16,C15 | C_0402_1005Metric | 2   | 33pF |
-| U2  | SOT-23 | 1   | MCP1700x-330xxTT |
-| SW1 | SW_Push_SPST_NO_Alps_SKRK | 1   | SW_Push |
+| Item | Description | Quantity | Unit price (\$) | Total prince (\$) | URL |
+| --- | --- | ---: | ---: | ---: | --- |
+| 0402CG330J500NT | 33pF 50V C0G ±5% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS | 4   | 0.001 | 0.004 | https://jlcpcb.com/partdetail/1914-0402CG330J500NT/C1562 |
+| DSX321G 12MHz | SMD3225-4P Crystals ROHS | 5   | 0.4003 | 2.0015 | https://jlcpcb.com/partdetail/KDSDaishinku-DSX321G12MHz/C93234 |
+| KT-0603W | 100mW 120° 2.6V~3.1V 360mcd 5mA Discrete Diode White Yellow Lens op View Mount 0603 LED Indication - Discrete ROHS | 2   | 0.0104 | 0.0208 | https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0603W/C2290 |
+| CL05A105KA5NQNC | 1uF 25V X5R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS | 4   | 0.0029 | 0.0116 | https://jlcpcb.com/partdetail/53938-CL05A105KA5NQNC/C52923 |
+| RP2040 | 12bit 133MHz 30 LQFN-56(7x7) Microcontrollers (MCU/MPU/SOC) ROHS | 2   | 0.9298 | 1.8596 | https://jlcpcb.com/partdetail/RaspberryPi-RP2040/C2040 |
+| 0402WGF1001TCE | \-55℃~+155℃ 1kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS | 6   | 0.0006 | 0.0036 | https://jlcpcb.com/partdetail/12256-0402WGF1001TCE/C11702 |
+| W25Q16JVUXIQ | \-40℃~+85℃ 100,000 Cycles 10uA 133MHz 16Mbit 2.7V~3.6V 20 Years 3ms SPI USON-8-EP(2x3) NOR FLASH ROHS | 2   | 0.5448 | 1.0896 | https://jlcpcb.com/partdetail/WinbondElec-W25Q16JVUXIQ/C2843335 |
+| CL05B104KO5NNNC | 100nF 16V X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS | 22  | 0.0012 | 0.0264 | https://jlcpcb.com/partdetail/1877-CL05B104KO5NNNC/C1525 |
+| 0402WGF1002TCE | \-55℃~+155℃ 10kΩ 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS | 2   | 0.0005 | 0.001 | https://jlcpcb.com/partdetail/26487-0402WGF1002TCE/C25744 |
+| CL10A106KP8NNNC | 10V 10uF X5R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS | 4   | 0.0057 | 0.0228 | https://jlcpcb.com/partdetail/20411-CL10A106KP8NNNC/C19702 |
+| 0402WGF220JTCE | \-55℃~+155℃ 22Ω 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS | 4   | 0.0006 | 0.0024 | https://jlcpcb.com/partdetail/25835-0402WGF220JTCE/C25092 |
+| MCP1700T-3302E/TT | IC REG LINEAR 3.3V 250MA SOT23-3 | 2   | 0.51 | 1.02 | https://www.digikey.com/en/products/detail/microchip-technology/MCP1700T-3302E-TT/652676 |
+| 1001-011-01101 | CONN PLUG USB1.1 TYPEA 4P SMD RA | 2   | 0.91 | 1.82 | https://www.digikey.com/en/products/detail/cnc-tech/1001-011-01101/3064739 |
+| SKRKAHE020 | SWITCH TACTILE SPST-NO 0.05A 12V | 2   | 0.41 | 0.82 | https://www.digikey.com/en/products/detail/alps-alpine/skrkahe020/19529210 |
+| PCB | Green, 1.6 Thickness, HASL(with lead) | 5   | 0.4 | 2   |     |
+| PCBA | Assemble top side | 2   | 12.875 | 25.75 |     |
+| 3D printing | 3D printing of the case | 1   | 0.87 | 0.87 |     |
