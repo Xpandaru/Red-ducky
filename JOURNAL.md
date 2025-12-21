@@ -72,3 +72,6 @@ Today I've finaly finished the box design ! I added a cap for the USB and a litt
 
 <img width="2560" height="1082" alt="image" src="https://github.com/user-attachments/assets/70890270-5c7c-4be3-8c77-6db594e405ed" />
 <img width="2560" height="1082" alt="image" src="https://github.com/user-attachments/assets/bfb636b4-c254-4bfa-90ec-0eb4dd240bb0" />
+
+## Day 7 (12/21/2025, session of 2.5 hours) : Creation of the GitHub repository
+I finally created the project's GitHub page by following the submission guidelines step by step. I had a lot of trouble choosing the components on JLCPCB because I was completely lost; some components on Kicad didn't exist on JLCPCB, so I had to choose equivalents, but it was complicated to know which ones to select. Well, after two and a half hours of struggling, I finally succeeded, so I'm quite happy to have completed this step. All that's left is to create the firmware to validate the project.
