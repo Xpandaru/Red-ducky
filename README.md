@@ -32,7 +32,7 @@ It all started when a friend introduced me to [Hack Club](https://hackclub.com/)
 | CL10A106KP8NNNC | 10V 10uF X5R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS | 4   | 0.0057 | 0.0228 | https://jlcpcb.com/partdetail/20411-CL10A106KP8NNNC/C19702 |
 | 0402WGF220JTCE | \-55℃~+155℃ 22Ω 50V 62.5mW Thick Film Resistor ±1% ±100ppm/℃ 0402 Chip Resistor - Surface Mount ROHS | 4   | 0.0006 | 0.0024 | https://jlcpcb.com/partdetail/25835-0402WGF220JTCE/C25092 |
 | MCP1700T-3302E/TT | IC REG LINEAR 3.3V 250MA SOT23-3 | 2   | 0.51 | 1.02 | https://www.lcsc.com/product-detail/C39051.html |
-| 1001-011-01101 | CONN PLUG USB1.1 TYPEA 4P SMD RA | 2   | 0.91 | 1.82 | https://www.lcsc.com/product-detail/C2943127.html |
+| MOLEX 48037-2200 | USB-A (USB TYPE-A) Receptacle Connector 4 Position Solder Cup | 2   | 2.0539 | 4.1078 | https://www.lcsc.com/product-detail/C2765195.html |
 | SKRKAHE020 | SWITCH TACTILE SPST-NO 0.05A 12V | 2   | 0.41 | 0.82 | https://www.lcsc.com/product-detail/C202388.html |
 | PCB | Green, 1.6 Thickness, HASL(with lead) | 5   | 0.4 | 2   |     |
 | PCBA | Assemble top side | 2   | 12.875 | 25.75 |     |
