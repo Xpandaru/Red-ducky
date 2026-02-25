@@ -1,5 +1,5 @@
 # Journal
-### Total time spent : 17.2 hours
+### Total time spent : 23.7 hours
 All entries below are a transcription of the journal on the [blueprint program platform](https://blueprint.hackclub.com/projects/5896) because I created the github page afterwards.
 
 ## Day 10 (02/25/2026, session of 2.5 hours) : Making my first firmware !
