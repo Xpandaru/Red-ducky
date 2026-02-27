@@ -1,5 +1,5 @@
 # Journal
-### Total time spent : 29.7 hours
+### Total time spent : 32.2 hours
 All entries below are a transcription of the journal on the [blueprint program platform](https://blueprint.hackclub.com/projects/5896) because I created the github page afterwards.
 
 ## Day 1 (12/10/2025, session of 2 hours) : Preparation and schematic start
@@ -100,3 +100,8 @@ To continue working on the firmware, I again asked an AI agent for help. This al
 The next step was to create a mini-language like "STRING Hello World" that would allow me to change the payload without modifying the firmware. I finally got it working after many problems and implemented the STRING, DELAY, ENTER, and KEYCOMBO commands. But while trying to fix an error caused by the KEYCOMBO commands, I realized I had overused vibe coding and no longer understood my own code.
 
 Since I'm stuck, I'm going to go back a bit, but this time without vibe coding, to fully understand what I'm doing. We'll see how it goes in the next journal entry.
+
+## Day 12, 2nd entry (02/27/2026, session of 2.5 hours) : New start without vibe coding
+For this new firmware version, which I'm coding myself, I've recreated a function that allows the Red Ducky to type a string, currently accepting only lowercase and uppercase letters, numbers, and certain characters like ".", "!", and spaces. I then put the function that converts the characters to HID code in a separate file for better organization. I've also added a parameter to this function that allows you to convert the keys to either AZERTY or QWERTY layout. And I'm quite proud of the result !
+
+<img width="480" height="343" alt="image" src="https://github.com/user-attachments/assets/0f699540-2864-4481-8d36-3b901b028d38" />
