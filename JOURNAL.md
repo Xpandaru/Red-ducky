@@ -1,5 +1,5 @@
 # Journal
-### Total time spent : 26.7 hours
+### Total time spent : 29.7 hours
 All entries below are a transcription of the journal on the [blueprint program platform](https://blueprint.hackclub.com/projects/5896) because I created the github page afterwards.
 
 ## Day 1 (12/10/2025, session of 2 hours) : Preparation and schematic start
@@ -93,3 +93,10 @@ After finishing the physical part of the project, I had to start working on the 
 After creating my first "blink" firmware, I started improving it so my Red Ducky would be recognized as a device by the computer by using TinyUSB. Again, after encountering tons of bugs, I managed to get it working. For now, it only lights up an LED and is recognized by Windows, but that's already a small victory for me. The next step will be to make it work as a keyboard-like device (fingers crossed I don't run into any bugs). Here's a screenshot of the device recognized by Windows :
 
 <img width="391" height="418" alt="Capture d&#39;écran 2026-02-26 155719" src="https://github.com/user-attachments/assets/72c99369-04f6-495c-a882-1066007a339f" />
+
+## Day 12 (02/27/2026, session of 3 hours) : First keys typings
+To continue working on the firmware, I again asked an AI agent for help. This allowed me to first get my Red Ducky recognized as an HID device (keyboard). Then I implemented a system for typing keys. I managed to get it to type "Hello World" when plugged in.
+
+The next step was to create a mini-language like "STRING Hello World" that would allow me to change the payload without modifying the firmware. I finally got it working after many problems and implemented the STRING, DELAY, ENTER, and KEYCOMBO commands. But while trying to fix an error caused by the KEYCOMBO commands, I realized I had overused vibe coding and no longer understood my own code.
+
+Since I'm stuck, I'm going to go back a bit, but this time without vibe coding, to fully understand what I'm doing. We'll see how it goes in the next journal entry.
