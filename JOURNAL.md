@@ -1,5 +1,5 @@
 # Journal
-### Total time spent : 35 hours
+### Total time spent : 38 hours
 All entries below are a transcription of the journal on the [blueprint program platform](https://blueprint.hackclub.com/projects/5896) because I created the github page afterwards.
 
 ## Day 1 (12/10/2025, session of 2 hours) : Preparation and schematic start
@@ -110,3 +110,7 @@ For this new firmware version, which I'm coding myself, I've recreated a functio
 To improve the firmware, I had the idea of ​​creating my own version of DuckyScript. This will allow me to avoid recompiling the firmware later, but since my C skills are very limited, I had a lot of trouble setting this up. So I started by coding a parser, which will be the basis of the language. I first implemented the STRING command, which simply allows you to type the following text. And after many struggles, I managed to retype "Hello World!" using the parser. For now, the script is stored in a simple array within the firmware, but I will later implement a system to read a script from a separate file. I then added the DELAY command (waits the specified number of milliseconds) and ENTER (presses Enter). Below is a screenshot of a small example DuckyScript :
 
 <img width="199" height="177" alt="image" src="https://github.com/user-attachments/assets/4e7136d2-ed14-4735-86eb-b6ade8b6f8bb" />
+
+## Day 13, 2nd entry (02/28/2026, session of 3 hours) : Improved DuckyScript and list of supported characters
+Since my last journal entry, the firmware has changed a lot. I started by adding two features to my parser (DuckyScript) that now allow me to type key combinations (like CTRL+C) or special keys (like TAB). I encountered many problems again, especially when coding the parser function that read the key combinations. I then added many useful keyboard keys, which also took a lot of time. The most time-consuming part was completely redesigning the AZERTY layout so that Red Ducky works equally well in both AZERTY and QWERTY.
+I'll update the firmware on the repository so you can see it in more detail.
