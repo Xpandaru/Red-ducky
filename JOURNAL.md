@@ -1,5 +1,5 @@
 # Journal
-### Total time spent : 32.2 hours
+### Total time spent : 35 hours
 All entries below are a transcription of the journal on the [blueprint program platform](https://blueprint.hackclub.com/projects/5896) because I created the github page afterwards.
 
 ## Day 1 (12/10/2025, session of 2 hours) : Preparation and schematic start
@@ -105,3 +105,8 @@ Since I'm stuck, I'm going to go back a bit, but this time without vibe coding, 
 For this new firmware version, which I'm coding myself, I've recreated a function that allows the Red Ducky to type a string, currently accepting only lowercase and uppercase letters, numbers, and certain characters like ".", "!", and spaces. I then put the function that converts the characters to HID code in a separate file for better organization. I've also added a parameter to this function that allows you to convert the keys to either AZERTY or QWERTY layout. And I'm quite proud of the result !
 
 <img width="480" height="343" alt="image" src="https://github.com/user-attachments/assets/0f699540-2864-4481-8d36-3b901b028d38" />
+
+## Day 13 (02/28/2026, session of 2.8 hours) : Making my own script language
+To improve the firmware, I had the idea of ​​creating my own version of DuckyScript. This will allow me to avoid recompiling the firmware later, but since my C skills are very limited, I had a lot of trouble setting this up. So I started by coding a parser, which will be the basis of the language. I first implemented the STRING command, which simply allows you to type the following text. And after many struggles, I managed to retype "Hello World!" using the parser. For now, the script is stored in a simple array within the firmware, but I will later implement a system to read a script from a separate file. I then added the DELAY command (waits the specified number of milliseconds) and ENTER (presses Enter). Below is a screenshot of a small example DuckyScript :
+
+<img width="199" height="177" alt="image" src="https://github.com/user-attachments/assets/4e7136d2-ed14-4735-86eb-b6ade8b6f8bb" />
