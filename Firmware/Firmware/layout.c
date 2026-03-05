@@ -3,7 +3,7 @@
 #include "layout.h"
 #include "tusb.h"
 
-bool azerty = true;
+bool is_azerty = false;
 
 uint8_t layout_get_keycode(char c, uint8_t* modifier) {
 
@@ -16,7 +16,7 @@ uint8_t layout_get_keycode(char c, uint8_t* modifier) {
 
     // AZERTY conversion if activated
 
-    if (azerty == true) {
+    if (is_azerty == true) {
 
         if (c == 'a') return HID_KEY_Q;
         if (c == 'z') return HID_KEY_W;
