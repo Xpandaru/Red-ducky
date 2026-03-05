@@ -11,16 +11,27 @@ typedef enum {
     TYPE_RELEASE
 } type_state_t;
 
-static const bool azerty = true;
+// Variables declaration
 
-static const int global_delay = 500;
+static bool script_done = false;
+
+static const int global_delay = 1000;
 
 static type_state_t type_state = TYPE_IDLE;
 static const char* current_text = NULL;
 static int current_index = 0;
-bool typing_done = true;
-absolute_time_t next_event_time;
-absolute_time_t delay_until;
+static bool typing_done = true;
+
+static bool is_forced = false;
+static uint8_t forced_keycode = 0;
+static uint8_t forced_modifier = 0;
+
+static  int repeat = 0;
+
+static absolute_time_t next_event_time;
+static absolute_time_t delay_until;
+
+// Functions declaration
 
 void hid_press(uint8_t keycode, uint8_t modifier) {
     uint8_t keys[6] = {0};
@@ -46,16 +57,27 @@ void hid_type_task(void) {
     if (typing_done) return;
     if (!time_reached(next_event_time)) return;
 
-    char c = current_text[current_index];
+    static uint8_t modifier = 0;
+    static uint8_t keycode = 0;
 
-    if (c == '\0') {
-        typing_done = true;
-        type_state = TYPE_IDLE;
-        return;
+    if (!is_forced) {
+
+        char c = current_text[current_index];
+
+        if (c == '\0') {
+            typing_done = true;
+            type_state = TYPE_IDLE;
+            return;
+        }
+
+        modifier = 0;
+        keycode = layout_get_keycode(c, &modifier);
+
     }
-
-    uint8_t modifier = 0;
-    uint8_t keycode = layout_get_keycode(c, &modifier);
+    else {
+        modifier = forced_modifier;
+        keycode = forced_keycode;
+    }
 
     // States
 
@@ -73,7 +95,13 @@ void hid_type_task(void) {
             break;
 
         case TYPE_RELEASE:
-            current_index++;
+            if (is_forced) {
+                is_forced = false;
+                typing_done = true;
+            }
+            else {
+                current_index++;
+            }
             type_state = TYPE_IDLE;
             next_event_time = make_timeout_time_ms(10);
             break;
@@ -82,6 +110,18 @@ void hid_type_task(void) {
 
 void execute_command(Command* cmd) {
     switch (cmd->type) {
+
+        case CMD_REM:
+            break;
+
+        case CMD_LAYOUT:
+            if (strcmp(cmd->argument, "AZERTY") == 0) is_azerty = true;
+            if (strcmp(cmd->argument, "QWERTY") == 0) is_azerty = false;
+            break;
+
+        case CMD_REPEAT:
+            repeat = cmd->value;
+            break;
         
         case CMD_STRING:
             start_typing(cmd->argument);
@@ -91,33 +131,29 @@ void execute_command(Command* cmd) {
             delay_until = make_timeout_time_ms(cmd->value);
             break;
 
-        case CMD_ENTER:
-            start_typing("\n");
-            break;
-
         case CMD_MODIFIER:
             if (cmd->keycode != 0) {
-                hid_press(cmd->keycode, cmd->modifier);
-                next_event_time = make_timeout_time_ms(10);
-                type_state = TYPE_PRESS;
+                forced_keycode = cmd->keycode;
+                forced_modifier = cmd->modifier;
+                is_forced = true;
                 typing_done = false;
             }
             break;
 
         case CMD_KEY:
             if (cmd->keycode != 0) {
-                hid_press(cmd->keycode, 0);
-                next_event_time = make_timeout_time_ms(10);
-                type_state = TYPE_PRESS;
+                forced_keycode = cmd->keycode;
+                forced_modifier = 0;
+                is_forced = true;
                 typing_done = false;
             }
             break;
 
         default:
+            script_done = true;
             break;
     }
 }
-
 
 int main() {
     stdio_init_all();
@@ -135,33 +171,37 @@ int main() {
 
     int current_line = 0;
     static const char* const script[] = {
-        "GUI R",
+        "WINDOWS r",
         "STRING notepad",
         "ENTER",
-        "DELAY 2000",
-        "STRING Demo\n",
+        "REPEAT 5",
+        "STRINGLN test",
         NULL
     };
     
     Command cmd;
     delay_until = get_absolute_time();
-    bool script_done = false;
 
     while (true) {
         tud_task();
         hid_type_task();
         gpio_put(LED_PIN, !script_done);
 
-        if (script[current_line] == NULL) script_done = true;
+        if (script[current_line] == NULL && typing_done) script_done = true;
 
-        if (typing_done && time_reached(delay_until) && !script_done) {
+        if (typing_done && time_reached(delay_until) && script[current_line] != NULL && !script_done) {
             
             cmd = parse_line(script[current_line]);
             execute_command(&cmd);
 
-            delay_until = make_timeout_time_ms(global_delay);
+            if (cmd.type != CMD_DELAY && cmd.type != CMD_REPEAT && cmd.type != CMD_REM) delay_until = make_timeout_time_ms(global_delay);
 
-            current_line++;
+            if (repeat <= 0 || cmd.type == CMD_REPEAT) {
+                current_line++;
+            }
+
+            if (repeat > 0) repeat--;
+            
         }
     }
 }
