@@ -1,5 +1,5 @@
 # Journal
-### Total time spent : 38 hours
+### Total time spent : 40.8 hours
 All entries below are a transcription of the journal on the [blueprint program platform](https://blueprint.hackclub.com/projects/5896) because I created the github page afterwards.
 
 ## Day 1 (12/10/2025, session of 2 hours) : Preparation and schematic start
@@ -114,3 +114,17 @@ To improve the firmware, I had the idea of ​​creating my own version of Duck
 ## Day 13, 2nd entry (02/28/2026, session of 3 hours) : Improved DuckyScript and list of supported characters
 Since my last journal entry, the firmware has changed a lot. I started by adding two features to my parser (DuckyScript) that now allow me to type key combinations (like CTRL+C) or special keys (like TAB). I encountered many problems again, especially when coding the parser function that read the key combinations. I then added many useful keyboard keys, which also took a lot of time. The most time-consuming part was completely redesigning the AZERTY layout so that Red Ducky works equally well in both AZERTY and QWERTY.
 I'll update the firmware on the repository so you can see it in more detail.
+
+## Day 14 (03/05/2026, session of 2.8 hours) : Patching and upgrading the firmware
+To begin, I fixed some major firmware bugs :
+- The first was that the `DELAY` command no longer worked. Upon investigation, I noticed that it was being overridden by the `global_delay` variable, which creates a delay between each script command. I then implemented conditions that would give `DELAY` priority over `global_delay`.
+- The second bug was that special keys would remain pressed indefinitely. I investigated and found that this was due to the `hid_type_task()` function returning because there was no text to type. I then added an exception for special keys so that the function would still execute.
+
+I then added several new commands :
+
+- `LAYOUT`, which takes `AZERTY` or `QWERTY` as an argument, allows you to change the keyboard layout directly in the script.
+- `REM` ignores everything written after it on the line, this allows for comments in the script.
+- `REPEAT`, which takes an integer as an argument, allows you to repeat the following command the specified number of times.
+- `STRINGLN` behaves like `STRING` but always presses enter after the text.
+
+Finally, I increased the maximum size of a `STRING` to 1000 characters.
