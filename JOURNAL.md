@@ -1,5 +1,5 @@
 # Journal
-### Total time spent : 40.8 hours
+### Total time spent : 44.6 hours
 All entries below are a transcription of the journal on the [blueprint program platform](https://blueprint.hackclub.com/projects/5896) because I created the github page afterwards.
 
 ## Day 1 (12/10/2025, session of 2 hours) : Preparation and schematic start
@@ -128,3 +128,10 @@ I then added several new commands :
 - `STRINGLN` behaves like `STRING` but always presses enter after the text.
 
 Finally, I increased the maximum size of a `STRING` to 1000 characters.
+
+## Day 15 (03/06/2026, session of 3.8 hours) : Adding a serial monitor support
+After fully completing the core of the firmware, I needed to start creating an interface between the Red Ducky and the computer so I could debug errors and, more importantly, modify the script without having to change and recompile the firmware. I enabled CDC alongside HID so the Red Ducky would be recognized by the serial monitor while still being detected as a keyboard at the same time. This part was tricky because I’m not very comfortable with USB configurations. Still, I managed to write my first “hello world” in the serial monitor.
+
+Then, after coding the foundation of an input‑reading system, I created the commands `EDIT START` and `EDIT QUIT`, which allow entering a special mode to modify the script. I also added the commands `SCRIPT BEGIN`, `SCRIPT END`, and `SCRIPT SHOW`. The first two let you write a new script between them, and `SCRIPT SHOW` returns the current script.
+
+At that point, I realized I had already been working for 3 hours and 45 minutes, so I’m taking a break to add a journal entry. There should be plenty of new things in the next journal entry.
