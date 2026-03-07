@@ -1,5 +1,5 @@
 # Journal
-### Total time spent : 44.6 hours
+### Total time spent : 47.1 hours
 All entries below are a transcription of the journal on the [blueprint program platform](https://blueprint.hackclub.com/projects/5896) because I created the github page afterwards.
 
 ## Day 1 (12/10/2025, session of 2 hours) : Preparation and schematic start
@@ -135,3 +135,17 @@ After fully completing the core of the firmware, I needed to start creating an i
 Then, after coding the foundation of an input‑reading system, I created the commands `EDIT START` and `EDIT QUIT`, which allow entering a special mode to modify the script. I also added the commands `SCRIPT BEGIN`, `SCRIPT END`, and `SCRIPT SHOW`. The first two let you write a new script between them, and `SCRIPT SHOW` returns the current script.
 
 At that point, I realized I had already been working for 3 hours and 45 minutes, so I’m taking a break to add a journal entry. There should be plenty of new things in the next journal entry.
+
+## Day 16 (03/07/2026, session of 2.5 hours) : Finishing the firmware
+As promised, this new journal entry comes with plenty of new features !
+First of all, I’ve added new commands to the serial monitor :
+
+- `SCRIPT EDIT` lets you modify the current script. It’s an alternative to `SCRIPT BEGIN` so you don’t have to start over from scratch.
+
+- `SCRIPT DEL` allows you to delete the last line of the script while editing or writing it, in case you made a mistake.
+
+Next, I completely overhauled the firmware so that the script is stored in the flash memory and loaded every time the device is plugged in. Thanks to this, any script modifications made through the serial monitor are now persistent.
+
+So I’m happy to announce that the Red Ducky firmware is officially finished, and everything seems to be working properly.
+
+The final step will be to write a small wiki to explain each command in detail.
