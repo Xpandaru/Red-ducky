@@ -10,6 +10,7 @@ typedef enum {
     CMD_REPEAT,
     CMD_STRING,
     CMD_DELAY,
+    CMD_GBDELAY,
     CMD_MODIFIER,
     CMD_KEY,
 } CommandType;
