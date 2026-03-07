@@ -160,6 +160,7 @@ void execute_command(Command* cmd) {
                 is_forced = true;
                 typing_done = false;
             }
+            else printf("ERROR(5): Argument not found : %s - %s\n\n", cmd->modifier, cmd->keycode);
             break;
 
         case CMD_KEY:
@@ -172,7 +173,8 @@ void execute_command(Command* cmd) {
             break;
 
         default:
-            script_done = true;
+            system_mode = MODE_ERROR;
+            printf("ERROR(4): Command not found or wrong argument type : %s\n\n", cmd->argument);
             break;
     }
 }
@@ -321,7 +323,7 @@ int main() {
 
                     if (strcmp(cdc_line_buffer, "SCRIPT END") == 0) {
                         if (script_save(script)) printf("Script saved successfully !\n\n");
-                        else printf("ERROR(3) : Flash overflow : The script size exceeds the allocated space in the flash memory.\n\n");
+                        else printf("ERROR(3): Flash overflow : The script size exceeds the allocated space in the flash memory.\n\n");
                         system_mode = MODE_EDIT;
                     }
 
