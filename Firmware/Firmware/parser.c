@@ -102,7 +102,11 @@ Command parse_line(const char* line) {
 
             cmd.value = atoi(parsed_arg);
 
-            if (cmd.value == 0) cmd.type = CMD_NULL;
+            if (cmd.value == 0) {
+                cmd.type = CMD_NULL;
+                strncpy(cmd.argument, line, sizeof(cmd.argument));
+                cmd.argument[sizeof(cmd.argument)-1] = '\0';
+            }
 
             return cmd;
         }
@@ -154,7 +158,11 @@ Command parse_line(const char* line) {
 
             cmd.value = atoi(parsed_arg);
 
-            if (cmd.value == 0) cmd.type = CMD_NULL;
+            if (cmd.value == 0) {
+                cmd.type = CMD_NULL;
+                strncpy(cmd.argument, line, sizeof(cmd.argument));
+                cmd.argument[sizeof(cmd.argument)-1] = '\0';
+            }
 
             return cmd;
         }
@@ -167,7 +175,11 @@ Command parse_line(const char* line) {
 
             cmd.value = atoi(parsed_arg);
 
-            if (cmd.value == 0) cmd.type = CMD_NULL;
+            if (cmd.value == 0) {
+                cmd.type = CMD_NULL;
+                strncpy(cmd.argument, line, sizeof(cmd.argument));
+                cmd.argument[sizeof(cmd.argument)-1] = '\0';
+            }
 
             return cmd;
         }
