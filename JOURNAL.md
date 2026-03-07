@@ -1,5 +1,5 @@
 # Journal
-### Total time spent : 47.1 hours
+### Total time spent : 49 hours
 All entries below are a transcription of the journal on the [blueprint program platform](https://blueprint.hackclub.com/projects/5896) because I created the github page afterwards.
 
 ## Day 1 (12/10/2025, session of 2 hours) : Preparation and schematic start
@@ -149,3 +149,6 @@ Next, I completely overhauled the firmware so that the script is stored in the f
 So I’m happy to announce that the Red Ducky firmware is officially finished, and everything seems to be working properly.
 
 The final step will be to write a small wiki to explain each command in detail.
+
+## Day 16, 2nd entry (03/07/2026, session of 1.9 hours) : Making the wiki
+To finish this project, I decided to create a complete wiki documenting all the commands and ways to use the Red Ducky. I also slightly modified the firmware so that it writes errors to the serial monitor. If you're interested here's the link to the [wiki](https://github.com/Xpandaru/Red-ducky/wiki).
