@@ -159,6 +159,19 @@ Command parse_line(const char* line) {
             return cmd;
         }
 
+        // ----------{GBDELAY}----------
+        if (strcmp(parsed_type, "GBDELAY") == 0) {
+
+            cmd.type = CMD_GBDELAY;
+            char* parsed_arg = strtok(NULL, "");
+
+            cmd.value = atoi(parsed_arg);
+
+            if (cmd.value == 0) cmd.type = CMD_NULL;
+
+            return cmd;
+        }
+
         // ----------{MODIFIER}----------
 
         if (strcmp(parsed_type, "CTRL") == 0 ||
