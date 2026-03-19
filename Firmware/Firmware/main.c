@@ -362,7 +362,11 @@ int main() {
             cmd = parse_line(script[current_line]);
             execute_command(&cmd);
 
-            if (cmd.type != CMD_DELAY && cmd.type != CMD_REPEAT && cmd.type != CMD_REM && cmd.type != CMD_GBDELAY) delay_until = make_timeout_time_ms(global_delay);
+            if (cmd.type != CMD_DELAY 
+                && cmd.type != CMD_REPEAT 
+                && cmd.type != CMD_REM 
+                && cmd.type != CMD_GBDELAY 
+                && cmd.type != CMD_LAYOUT) delay_until = make_timeout_time_ms(global_delay);
 
             if (repeat <= 0 || cmd.type == CMD_REPEAT) {
                 current_line++;
