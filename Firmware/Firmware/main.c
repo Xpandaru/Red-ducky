@@ -193,7 +193,8 @@ int main() {
     absolute_time_t blink_delay = get_absolute_time();
     bool led_state = false;
 
-    while (!tud_hid_ready()) {
+    absolute_time_t usb_timeout = make_timeout_time_ms(3000);
+    while (!tud_hid_ready() && !time_reached(usb_timeout)) {
         tud_task();
     }
 
