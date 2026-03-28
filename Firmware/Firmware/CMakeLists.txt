@@ -1,8 +1,10 @@
 cmake_minimum_required(VERSION 3.13)
 
+set(PICO_SDK_PATH "/home/Pandaru/pico/pico-sdk" CACHE PATH "Pico SDK path")
+
 set(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")
 
-include($ENV{PICO_SDK_PATH}/external/pico_sdk_import.cmake)
+include(${PICO_SDK_PATH}/external/pico_sdk_import.cmake)
 
 project(red_ducky_1.0.0 C CXX ASM)
 
