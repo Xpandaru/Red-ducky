@@ -26,16 +26,16 @@ It all started when a friend introduced me to [Hack Club](https://hackclub.com/)
 
 First, go to the [JLCPCB](https://jlcpcb.com/) website and start a new order by clicking the “Order Now” button in the top-right corner. Then, upload the [PRODUCTION.zip](https://github.com/Xpandaru/Red-ducky/blob/main/PCB/PRODUCTION/PRODUCTION.zip) file in the “Add Gerber File” field. You don’t need to change any settings except “PCB Qty” to select how many Red-Ducky boards you want. At the very bottom, enable “PCB Assembly”; again, you don’t need to change any settings. Finally, click “Next” on the right side of the screen under “Calculated Price.” Once that’s done, click “Next” again to reach the “Bill of Materials” tab, and upload the [BOM.csv](https://github.com/Xpandaru/Red-ducky/blob/main/PCB/PRODUCTION/BOM.csv) and [CPL.csv](https://github.com/Xpandaru/Red-ducky/blob/main/PCB/PRODUCTION/CPL.csv) files available in the repository.
 
-Then click “Process BOM & CPL”, and you will see the list of components appear. However, you will likely notice that component **J1** shows an error in the “Select” column labeled “Standard Only.” This happens because the “PCBA Type” setting is still set to “Economic.” To fix this, you have two options: either click “Standard Only” and then “Switch to Standard PCBA” (which will increase the price), or click “Next” and choose “Do not place” in each popup, which will remove the component from the assembly. If you choose the second option, you will need to purchase the part separately (for example from [LCSC](https://www.lcsc.com/product-detail/C2765195.html)) and solder it yourself.
+Then click “Process BOM & CPL”, and you will see the list of components appear. However, you will likely notice that component **J1** shows an error in the “Select” column labeled “Standard Only.” This happens because the “PCBA Type” setting is still set to “Economic.” To fix this, you have two options : either click “Standard Only” and then “Switch to Standard PCBA” (which will increase the price), or click “Next” and choose “Do not place” in each popup, which will remove the component from the assembly. If you choose the second option, you will need to purchase the part separately (for example from [LCSC](https://www.lcsc.com/product-detail/C2765195.html)) and solder it yourself.
 
 After that, you will see a preview of the components placed on the PCB, just make sure that the placement matches the image below and you can simply click “Next” and follow the instructions to complete your assembled PCB order.
 <img width="1109" height="426" alt="Capture d&#39;écran 2026-04-04 154840" src="https://github.com/user-attachments/assets/a9254dc2-2095-4cd5-affd-c9549d2716e6" />
 
 ## Building the Red-Ducky
 
-Once you have received all the parts, solder **J1** if you ordered it separately. Otherwise, you just need to 3D print the [case](https://github.com/Xpandaru/Red-ducky/blob/main/CAD/red_ducky.step) available in the repository (I haven’t had the chance to print it yet, so I’m not sure if it works) and place the fully assembled Red-Ducky inside !
+Once you have received all the parts, solder **J1** if you ordered it separately. Otherwise, you just need to 3D print the [case](https://github.com/Xpandaru/Red-ducky/tree/main/CAD) available in the repository (I haven’t had the chance to print it yet, so I’m not sure if it works) and place the fully assembled Red-Ducky inside !
 
-Finally, you can simply follow the tutorials in the wiki to flash the firmware and start using your Red-Ducky.
+Finally, you can simply follow the tutorials in the [wiki](https://github.com/Xpandaru/Red-ducky/wiki) to flash the firmware and start using your Red-Ducky.
 
 # Bill of materials
 
