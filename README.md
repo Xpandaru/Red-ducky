@@ -1,20 +1,41 @@
 # Red-ducky
-<img width="2560" height="1082" alt="render_2" src="https://github.com/user-attachments/assets/f3e22eeb-b566-41cc-9a84-e5670925437a" />
-In this project I'll make my own Rubber Ducky, named Red ducky ! A Rubber Ducky is a hacking tool that mimics a keyboard to inject a sequence of keys. I started this project with no knowledge of PCB design, so it promises to be very educational.
+
+<img width="2560" height="1082" alt="render_2" src="https://github.com/user-attachments/assets/f3e22eeb-b566-41cc-9a84-e5670925437a" class="jop-noMdConv"> In this project I'll make my own Rubber Ducky, named Red ducky ! A Rubber Ducky is a hacking tool that mimics a keyboard to inject a sequence of keys. I started this project with no knowledge of PCB design, so it promises to be very educational.
 
 ## The story of the project
 
 It all started when a friend introduced me to [Hack Club](https://hackclub.com/) during the [Cyber ​​Ninja CTF](https://www.cyber-ninja-ctf.fr/) (a cybersecurity competition organized by [Oteria Cyber ​​School](https://www.oteria.fr/)). I was quickly drawn to the [Blueprint program](https://blueprint.hackclub.com) because I knew absolutely nothing about electronics, and being very curious, I saw it as the perfect opportunity to explore the field. I soon had the idea to recreate a Rubber Ducky (a very popular cybersecurity tool) to understand how it worked and have my own by the end of the project. From there, I began learning all the necessary knowledge and developing my project based on the [custom devboard](https://blueprint.hackclub.com/starter-projects/devboard) guided project.
+
 ## Some screenshots
-<img width="2560" height="1082" alt="rendu_1" src="https://github.com/user-attachments/assets/78ed0a53-a1b9-423d-932a-13b90140d5e0" />
+
+<img width="2560" height="1082" alt="rendu_1" src="https://github.com/user-attachments/assets/78ed0a53-a1b9-423d-932a-13b90140d5e0" class="jop-noMdConv">
 
 ### The PCB :
 
-<img width="1746" height="602" alt="image" src="https://github.com/user-attachments/assets/15f25b52-6d29-4fac-bc19-6ec46261b0af" />
+<img width="1746" height="602" alt="image" src="https://github.com/user-attachments/assets/15f25b52-6d29-4fac-bc19-6ec46261b0af" class="jop-noMdConv">
 
 ### The schematic :
 
-<img width="1636" height="1130" alt="image" src="https://github.com/user-attachments/assets/4dd36a92-4d46-405a-9d63-89dce725ef0b" />
+<img width="1636" height="1130" alt="image" src="https://github.com/user-attachments/assets/4dd36a92-4d46-405a-9d63-89dce725ef0b" class="jop-noMdConv">
+
+# How to build
+
+## Ordering the PCB from JLCPCB
+
+[JLCPCB](https://jlcpcb.com/) is a company that offers fast and affordable PCB manufacturing and assembly services through an easy-to-use online platform.
+
+First, go to the [JLCPCB](https://jlcpcb.com/) website and start a new order by clicking the “Order Now” button in the top-right corner. Then, upload the [PRODUCTION.zip](https://github.com/Xpandaru/Red-ducky/blob/main/PCB/PRODUCTION/PRODUCTION.zip) file in the “Add Gerber File” field. You don’t need to change any settings except “PCB Qty” to select how many Red-Ducky boards you want. At the very bottom, enable “PCB Assembly”; again, you don’t need to change any settings. Finally, click “Next” on the right side of the screen under “Calculated Price.” Once that’s done, click “Next” again to reach the “Bill of Materials” tab, and upload the [BOM.csv](https://github.com/Xpandaru/Red-ducky/blob/main/PCB/PRODUCTION/BOM.csv) and [CPL.csv](https://github.com/Xpandaru/Red-ducky/blob/main/PCB/PRODUCTION/CPL.csv) files available in the repository.
+
+Then click “Process BOM & CPL”, and you will see the list of components appear. However, you will likely notice that component **J1** shows an error in the “Select” column labeled “Standard Only.” This happens because the “PCBA Type” setting is still set to “Economic.” To fix this, you have two options : either click “Standard Only” and then “Switch to Standard PCBA” (which will increase the price), or click “Next” and choose “Do not place” in each popup, which will remove the component from the assembly. If you choose the second option, you will need to purchase the part separately (for example from [LCSC](https://www.lcsc.com/product-detail/C2765195.html)) and solder it yourself.
+
+After that, you will see a preview of the components placed on the PCB, just make sure that the placement matches the image below and you can simply click “Next” and follow the instructions to complete your assembled PCB order.
+<img width="1109" height="426" alt="Capture d&#39;écran 2026-04-04 154840" src="https://github.com/user-attachments/assets/a9254dc2-2095-4cd5-affd-c9549d2716e6" />
+
+## Building the Red-Ducky
+
+Once you have received all the parts, solder **J1** if you ordered it separately. Otherwise, you just need to 3D print the [case](https://github.com/Xpandaru/Red-ducky/tree/main/CAD) available in the repository (I haven’t had the chance to print it yet, so I’m not sure if it works) and place the fully assembled Red-Ducky inside !
+
+Finally, you can simply follow the tutorials in the [wiki](https://github.com/Xpandaru/Red-ducky/wiki) to flash the firmware and start using your Red-Ducky.
 
 # Bill of materials
 
