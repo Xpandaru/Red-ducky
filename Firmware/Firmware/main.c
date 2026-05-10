@@ -103,13 +103,13 @@ void hid_type_task(void) {
         case TYPE_IDLE:
             hid_press(keycode, modifier);
             type_state = TYPE_PRESS;
-            next_event_time = make_timeout_time_ms(10);
+            next_event_time = make_timeout_time_ms(1);
             break;
 
         case TYPE_PRESS:
             hid_release();
             type_state = TYPE_RELEASE;
-            next_event_time = make_timeout_time_ms(10);
+            next_event_time = make_timeout_time_ms(2);
             break;
 
         case TYPE_RELEASE:
@@ -121,7 +121,7 @@ void hid_type_task(void) {
                 current_index++;
             }
             type_state = TYPE_IDLE;
-            next_event_time = make_timeout_time_ms(10);
+            next_event_time = make_timeout_time_ms(2);
             break;
     }
 }
